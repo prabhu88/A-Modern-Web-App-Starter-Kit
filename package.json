@@ -1,0 +1,77 @@
+{
+  "name": "A-Modern-Web-App-Starter-Kit",
+  "version": "1.0.0",
+  "description": " 'A Modern Web App Starter Kit' is a fully-functional template for building fast and efficient web applications using the latest technologies. Built with React, Node.js, and SQLite, this starter kit provides a solid foundation for developers looking to create complex and dynamic web applications",
+  "repository": "https://github.com/prabhu88/A-Modern-Web-App-Starter-Kit.git",
+  "author": {
+    "name": "S. Prabhu (prabhu88 @github)",
+    "email": "s.prabhu.mtech88@gmail.com"
+  },
+  "main": "./main.js",  
+  "homepage": "./",
+  "scripts": {
+    "start": "concurrently \"npm run react-start\" \"npm run server-start\" \"wait-on http://localhost:3000 && npm run electron-dev\"",
+    "react-build": "react-app-rewired build",
+    "react-start": "react-app-rewired start",
+    "server-build": "babel server --out-dir build-server",
+    "server-start": "nodemon --watch server --exec babel-node server/server.js",
+    "electron-dev": "node scripts/dev.js scripts/start.js",
+    "electron-pack": "electron-builder -c.extraMetadata.main='./main.js'",
+    "preelectron-pack": "npm run react-build && npm run server-build"
+  },  
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-proposal-decorators": "^7.20.13",
+    "@babel/preset-env": "^7.4.4",
+    "concurrently": "^4.1.0",
+    "customize-cra": "^0.2.12",
+    "electron": "^5.0.2",
+    "electron-builder": "^20.41.0",
+    "react-app-rewired": "^2.1.3",
+    "react-scripts": "3.0.1",
+    "redux-devtools-extension": "^2.13.9",
+    "wait-on": "^3.2.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "app-module-path": "^2.2.0",
+    "async": "^3.2.4",
+    "axios": "^0.18.0",
+    "body-parser": "^1.20.1",
+    "bootstrap": "^5.2.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "electron-is-dev": "^1.1.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.4.0",
+    "morgan": "^1.10.0",
+    "node-cache": "^5.1.2",
+    "nodemon": "^1.19.1",
+    "piping": "^1.0.0-rc.4",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.1",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "5.3.4",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2",
+    "sqlite3": "^5.1.4",
+    "winston": "^3.8.2"
+  },
+  "build": {
+    "appId": "com.electron-react-node",
+    "files": [
+      "build/**/**/*",
+      "build-server/**/**/*",
+      "node_modules/**/*",
+      "./main.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "browserslist": []
+}

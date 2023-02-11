@@ -1,0 +1,12 @@
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAIL = "LOGIN_FAIL";
+export const LOGOUT = "LOGOUT";
+export const SET_MESSAGE = "SET_MESSAGE";
+export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
+
+export const GET_PROFILE = "GET_PROFILE"
+export const SET_PROFILE = "SET_PROFILE"
+
+export const GET_PROFILE_REQUEST = "GET_PROFILE_REQUEST"
+export const GET_PROFILE_SUCCESS = "GET_PROFILE_SUCCESS"
+export const GET_PROFILE_ERROR = "GET_PROFILE_ERROR"
